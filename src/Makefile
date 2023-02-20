@@ -9,7 +9,7 @@ INCLUDES := -I$(OUTPUT)
 CFLAGS := -g -Wall
 ARCH := $(shell uname -m | sed 's/x86_64/x86/')
 
-APPS = perfbuf-output ringbuf-output ringbuf-reserve-submit
+APPS = perfbuf-output ringbuf-output ringbuf-reserve-submit user_ringbuf
 
 ifeq ($(V),1)
 	Q =
