@@ -5,11 +5,10 @@ LLVM_STRIP ?= llvm-strip
 BPFTOOL ?= $(abspath ../tools/bpftool)
 LIBBPF_SRC := $(abspath ../libbpf/src)
 LIBBPF_OBJ := $(abspath $(OUTPUT)/libbpf.a)
-INCLUDES := -I$(OUTPUT)
-CFLAGS := -g -Wall
+INCLUDES := -I$(OUTPUT)  -I/usr/src/linux-6.1-rc3/include -I/usr/src/linux-6.1-rc3/arch/include -I/usr/src/linux-6.1-rc3/arch/x86/include -I/usr/src/linux-6.1-rc3/tools/lib
 ARCH := $(shell uname -m | sed 's/x86_64/x86/')
 
-APPS = perfbuf-output ringbuf-output ringbuf-reserve-submit user_ringbuf
+APPS = perfbuf-output ringbuf-output ringbuf-reserve-submit ring_buffer_user
 
 ifeq ($(V),1)
 	Q =

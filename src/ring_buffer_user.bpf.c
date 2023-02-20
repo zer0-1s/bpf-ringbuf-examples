@@ -5,7 +5,7 @@
 #include <bpf/bpf_helpers.h>
 #include "bpf_misc.h"
 #include "test_user_ringbuf.h"
-
+#include <linux/bpf_types.h>
 char _license[] SEC("license") = "GPL";
 
 struct {
